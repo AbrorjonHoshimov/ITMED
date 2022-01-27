@@ -22,11 +22,11 @@ import org.springframework.web.multipart.MultipartFile;
 
 public class CsvConfig {
     public static String TYPE = "text/csv";
-    static String[] HEADERs = { "Id", "Title", "Description", "Published" };
+    static String[] HEADERs = { "id", "name", "doc_date"};
 
     public static boolean hasCSVFormat(MultipartFile file) {
         if (TYPE.equals(file.getContentType())
-                || file.getContentType().equals("text/csv")) {
+                || file.getContentType().equals("application/vnd.ms-excel")) {
             return true;
         }
 
